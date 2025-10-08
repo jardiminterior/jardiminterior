@@ -1,157 +1,162 @@
 /*
- * Estilos minimalistas para o site Jardim Interior
- * Inspirado em uma estética orgânica com foco em legibilidade e leveza.
- */
+  Estilo base para o site Jardim Interior.  As cores e espaçamentos foram
+  escolhidos para transmitir uma atmosfera minimalista, calma e acolhedora.
+  Ajuste as variáveis abaixo para personalizar a paleta.
+*/
 
-/* Variáveis de cor e tipografia */
 :root {
-  --primary-color: #0e3d18;
-  --secondary-color: #f5f7f1;
-  --accent-color: #b1cbbb;
-  --text-color: #2b2b2b;
-  --heading-font: 'Playfair Display', serif;
-  --body-font: 'Open Sans', sans-serif;
+  --bg: #0e0e0e;
+  --fg: #eaeaea;
+  --muted: #9ea0a3;
+  --line: #2a2a2a;
+  --accent: #a3d9a5;
+  --highlight: #dbb778;
 }
 
-/* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: var(--body-font);
-  color: var(--text-color);
-  background-color: var(--secondary-color);
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
 }
 
-/* Containers centralizados */
-.container {
-  width: 90%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-/* Hero section */
-.hero {
-  background-image: url('cover.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: #ffffff;
-  text-align: center;
-}
-.hero .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
-  border-radius: 8px;
-}
-.hero h1 {
-  font-family: var(--heading-font);
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-/* Seções */
-.section {
-  padding: 4rem 0;
-}
-.section.alt {
-  background-color: #e9efe3;
-}
-.section h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-}
-.section p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Botão call-to-action */
-.cta-button {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+a {
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-.cta-button:hover {
-  background-color: #134f26;
 }
 
-/* Video container */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-}
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+a:hover {
+  text-decoration: underline;
 }
 
-/* Newsletter form */
-.newsletter-form {
+header.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+header.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+header.hero .subheading {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+nav a {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--line);
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 3rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+section p {
+  max-width: 70ch;
+  margin-bottom: 1.5rem;
+}
+
+.pre-sell {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
-}
-.newsletter-form input[type="email"] {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-.newsletter-form button {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.newsletter-form button:hover {
-  background-color: #134f26;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  color: #fff;
+.tier {
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 280px;
+  max-width: 100%;
   text-align: center;
-  padding: 2rem 0;
 }
-footer a {
-  color: #b5d8c8;
-  text-decoration: none;
-  margin-left: 0.25rem;
+
+.tier h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
 }
-footer a:hover {
-  text-decoration: underline;
+
+.tier .price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.tier button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.tier button:hover {
+  opacity: 0.9;
+}
+
+.donation .tier button {
+  background-color: var(--highlight);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  header.hero h1 {
+    font-size: 2.2rem;
+  }
+  section h2 {
+    font-size: 1.6rem;
+  }
+  .tier {
+    width: 100%;
+  }
 }
